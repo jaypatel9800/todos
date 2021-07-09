@@ -1,14 +1,14 @@
-import React, {StrictMode} from "react"
+import React from "react"
 import ReactDOM from "react-dom"
 import App from "./App"
-import { HashRouter as Router } from "react-router-dom";
-import { createBrowserHistory } from "history";
+// import { HashRouter as Router } from "react-router-dom";
+// import { createBrowserHistory } from "history";
 
-const history = createBrowserHistory();
+// const history = createBrowserHistory();
 
 ReactDOM.render(
-<StrictMode>    
-<Router history={history}>
+<React.StrictMode>    
+{/* <Router history={history}> */}
 <App/>
-</Router>
-</StrictMode>, document.getElementById("root"))
+{/* </Router> */}
+</React.StrictMode>, document.getElementById("root"))

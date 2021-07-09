@@ -3,7 +3,7 @@ import Diff from "./bottom";
 import sun from "./images/icon-sun.svg"
 import moon from "./images/icon-moon.svg"
 import cross from "./images/icon-cross.svg";
-import { Route } from "react-router-dom";
+// import { Route } from "react-router-dom";
 import "./style.css";
 
 const App = () => {
@@ -153,7 +153,7 @@ const App = () => {
               placeholder="Create a new todo"
             />
           </div>
-          <Route path="/" exact>
+          {/* <Route path="/" exact> */}
             <ul>
               {item.map((a) => (
                 <li key={a.id}>
@@ -174,8 +174,8 @@ const App = () => {
                 </li>
               ))}
             </ul>
-          </Route>
-          <Route path="/active">
+          {/* </Route> */}
+          {/* <Route path="/active"> */}
             <ul>
               {active.map((a) => (
                 <li key={a.id}>
@@ -194,8 +194,8 @@ const App = () => {
                 </li>
               ))}
             </ul>
-          </Route>
-          <Route path="/complete">
+          {/* </Route> */}
+          {/* <Route path="/complete"> */}
             <ul>
               {comp.map((a) => (
                 <li key={a.id}>
@@ -214,7 +214,7 @@ const App = () => {
                 </li>
               ))}
             </ul>
-          </Route>
+          {/* </Route> */}
           <div className="bottom">
             <p>{count} items left</p>
             <Diff activeItem={activeItem} cmpltItem={cmpltItem} add={add} />
