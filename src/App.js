@@ -13,7 +13,7 @@ const App = () => {
   const [comp, addComp] = useState([]);
   const [count, changeCount] = useState("");
   const [mark, changeMark] = useState(false);
-  const [darkTheme, setDarkTheme] = useState(true)
+  const [darkTheme, setDarkTheme] = useState(getDefaultTheme())
 
   useEffect(() => {
     const addCount = () => {
@@ -24,9 +24,14 @@ const App = () => {
         changeMark(false)
       }
     };
+    localStorage.setItem('dark', JSON.stringify(darkTheme))
     addCount();
   });
 
+  function getDefaultTheme() {
+    const selectedTheme = JSON.parse(localStorage.getItem('dark'))
+    return selectedTheme || false
+  }
 
   const add = () => {
     if (text.length === 0) {
