@@ -3,17 +3,17 @@ import Diff from "./bottom";
 import sun from "./images/icon-sun.svg"
 import moon from "./images/icon-moon.svg"
 import cross from "./images/icon-cross.svg";
-// import { Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import "./style.css";
 
 const App = () => {
   const [text, changetext] = useState("");
-  const [item, addItem] = useState(getData());
+  const [item, addItem] = useState([]);
   const [active, changeActive] = useState([]);
   const [comp, addComp] = useState([]);
   const [count, changeCount] = useState("");
   const [mark, changeMark] = useState(false);
-  const [darkTheme, setDarkTheme] = useState(getDefaultTheme())
+  const [darkTheme, setDarkTheme] = useState(true)
 
   useEffect(() => {
     const addCount = () => {
@@ -25,18 +25,8 @@ const App = () => {
       }
     };
     addCount();
-    localStorage.setItem('dark', JSON.stringify(darkTheme))
-    localStorage.setItem('datas', JSON.stringify(item))
   });
 
-  function getDefaultTheme() {
-    const selectedTheme = JSON.parse(localStorage.getItem('dark'))
-    return selectedTheme || false
-  }
-  function getData() {
-    const data = JSON.parse(localStorage.getItem('datas'))
-    return data || false
-  }
 
   const add = () => {
     if (text.length === 0) {
@@ -153,7 +143,7 @@ const App = () => {
               placeholder="Create a new todo"
             />
           </div>
-          {/* <Route path="/" exact> */}
+          <Route path="/" exact>
             <ul>
               {item.map((a) => (
                 <li key={a.id}>
@@ -174,8 +164,8 @@ const App = () => {
                 </li>
               ))}
             </ul>
-          {/* </Route> */}
-          {/* <Route path="/active"> */}
+          </Route>
+          <Route path="/active">
             <ul>
               {active.map((a) => (
                 <li key={a.id}>
@@ -194,8 +184,8 @@ const App = () => {
                 </li>
               ))}
             </ul>
-          {/* </Route> */}
-          {/* <Route path="/complete"> */}
+          </Route>
+          <Route path="/complete">
             <ul>
               {comp.map((a) => (
                 <li key={a.id}>
@@ -214,7 +204,7 @@ const App = () => {
                 </li>
               ))}
             </ul>
-          {/* </Route> */}
+          </Route>
           <div className="bottom">
             <p>{count} items left</p>
             <Diff activeItem={activeItem} cmpltItem={cmpltItem} add={add} />
