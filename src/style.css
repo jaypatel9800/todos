@@ -1,0 +1,280 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+}
+/* Dark Theme */
+.dark{
+    background-image: url(./images/bg-desktop-dark.jpg);
+    height: 100vh;
+    background-position:top;
+    background-repeat: no-repeat;
+    background-color: hsl(235, 21%, 11%);
+}
+.dark section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header{
+    min-height: 25vh;
+    display: flex;
+    width: 35%;
+    justify-content: space-between;
+    align-items: center;
+}
+.header h1{
+    letter-spacing: 7px;
+    font-size: 35px;
+    color: hsl(0, 0%, 98%);
+}
+.dark .mainInp{
+    width: 35%;
+    height: 7vh;
+    background-color: hsl(235, 24%, 19%);
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dark .mainInp div{
+    text-align: center;
+    width: 10%;
+}
+.dark .mainInp .write{
+    height: 7vh;
+    background: transparent;
+    border: transparent;
+    width: 90%;
+    outline: none;
+    color: hsl(234, 39%, 85%);
+}
+.dark ul{
+    height: 42vh;
+    background-color: hsl(235, 24%, 19%);
+    width: 35%;
+    margin-top: 20px;
+    overflow: scroll;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    list-style: none;
+    font-size: 10px;
+}
+.dark ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px 10px 0;
+    border-bottom: 0.5px solid hsl(235, 19%, 35%);
+    color: hsl(236, 9%, 61%);
+}
+.dark ul div{
+    display: flex;
+    padding: 5px 10px;
+}
+.dark ul div input{
+    content: "";
+    margin: 0 10px 0 10px;
+}
+.dark button{
+    background: transparent;
+    border: transparent;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    color: hsl(235, 19%, 35%);
+    transition: all ease 0.4s;
+}
+.dark button:hover{
+    color: hsl(234, 39%, 85%);
+}
+.dark .bottom{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    width: 35%;
+    height: 7vh;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-top: 0.5px solid #484b6a;
+    background-color: hsl(235, 24%, 19%);
+    color: hsl(235, 19%, 35%);
+}
+.dark .bottomBtn{
+    width: 32%;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width:1100px) {
+    .header, .dark .mainInp, .dark ul, .dark .bottom{
+        width: 60%;
+    }
+}
+@media screen and (max-width:768px) {
+    .header, .dark .mainInp, .dark ul, .dark .bottom{
+        width: 80%;
+    }
+}
+@media screen and (max-width:500px) {
+    .header, .dark .mainInp, .dark ul, .dark .bottom{
+        width: 90%;
+    }
+    .dark .bottom{
+        flex-wrap: wrap;
+        height: 14vh;
+    }
+    .dark .bottom p{
+        width: 50%;
+        order: 0;
+        text-align: center;
+    }
+    .dark .bottom button{
+        width: 50%;
+        order: 0;
+    }
+    .dark .bottomBtn{
+        order: 1;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+}
+
+.light{
+    background-image: url(./images/bg-desktop-light.jpg);
+    height: 100vh;
+    background-position:top;
+    background-repeat: no-repeat;
+    background-color: hsl(0, 0%, 98%);
+}
+.light section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.light .mainInp{
+    width: 35%;
+    height: 7vh;
+    background-color: hsl(0, 0%, 98%);
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.light .mainInp div{
+    text-align: center;
+    width: 10%;
+}
+.light .mainInp .write{
+    height: 7vh;
+    background: transparent;
+    border: transparent;
+    width: 90%;
+    outline: none;
+    color: hsl(235, 19%, 35%);
+}
+.light ul{
+    height: 42vh;
+    background-color: hsl(0, 0%, 98%);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 35%;
+    font-size: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    list-style: none;
+}
+.light ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px 10px 0;
+    color: hsl(235, 19%, 35%);
+}
+.light ul div{
+    display: flex;
+    padding: 5px 10px;
+}
+.light ul div input{
+    content: "";
+    margin: 0 10px 0 10px;
+}
+.light button{
+    background: transparent;
+    border: transparent;
+    color: hsl(236, 9%, 61%);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    transition: all ease 0.4s;
+}
+.light button:hover{
+    color: hsl(235, 19%, 35%);
+}
+.light .bottom{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    width: 35%;
+    height: 7vh;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    background-color: hsl(0, 0, 98%);
+    color: hsl(236, 9%, 61%);
+}
+.light .bottomBtn{
+    width: 32%;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width:1100px) {
+    .header, .light .mainInp, .light ul, .light .bottom{
+        width: 60%;
+    }
+}
+@media screen and (max-width:768px) {
+    .header, .light .mainInp, .light ul, .light .bottom{
+        width: 80%;
+    }
+}
+@media screen and (max-width:500px) {
+    .header, .light .mainInp, .light ul, .light .bottom{
+        width: 90%;
+    }
+    .light .bottom{
+        flex-wrap: wrap;
+        height: 14vh;
+    }
+    .light .bottom p{
+        width: 50%;
+        order: 0;
+        text-align: center;
+    }
+    .light .bottom button{
+        width: 50%;
+        order: 0;
+    }
+    .light .bottomBtn{
+        order: 1;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+}
