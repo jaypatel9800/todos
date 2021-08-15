@@ -60,14 +60,18 @@ body{
     background-color: hsl(235, 24%, 19%);
     width: 35%;
     margin-top: 20px;
-    overflow: scroll;
     border-radius: 5px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    scroll-behavior: smooth;
-    overflow: hidden;
     list-style: none;
     font-size: 10px;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    scroll-behavior: smooth;
 }
+.dark ul::-webkit-scrollbar {
+    display: none;
+  }
 .dark ul li{
     display: flex;
     justify-content: space-between;
@@ -210,10 +214,14 @@ body{
     margin-top: 20px;
     border-radius: 5px;
     overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
     scroll-behavior: smooth;
-    overflow: hidden;
     list-style: none;
 }
+.light ul::-webkit-scrollbar {
+    display: none;
+  }
 .light ul li{
     display: flex;
     justify-content: space-between;
